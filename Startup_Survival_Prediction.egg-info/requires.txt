@@ -1,6 +1,0 @@
-python-dotenv
-numpy
-pandas
-scikit-learn
-pymongo
-certifi

@@ -1,6 +1,6 @@
 import sys
-from Startup_Survival.logging import logger
-class StartupSurvivalException(Exception):
+from Smartphone_Addiction.logging import logger
+class SmartphoneAddictionException(Exception):
     def __init__(self, error_message, error_details:sys):
         self.error_message = error_message
         _,_,exc_tb = error_details.exc_info()
@@ -15,4 +15,4 @@ if __name__ == "__main__":
     try:
         logger.logging.info("Logging has started")
     except Exception as e:
-        raise StartupSurvivalException(e,sys)
+        raise SmartphoneAddictionException(e,sys)

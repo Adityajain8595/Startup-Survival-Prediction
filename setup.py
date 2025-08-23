@@ -20,7 +20,7 @@ def get_requirements()->List[str]:
     return requirements_list
 
 setup(
-    name="Startup Survival Prediction",
+    name="Teen Smartphone Addiction Detector",
     version="0.0.1",
     author="Aditya Jain",
     author_email="meaditya1103@gmail.com",
