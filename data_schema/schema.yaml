@@ -1,0 +1,122 @@
+version: 1.0
+schema:
+  name: smartphone_usage_schema
+  description: Schema for student smartphone usage dataset
+
+  columns:
+    Name:
+      dtype: string
+      nullable: false
+      unique: true
+
+    Age:
+      dtype: integer
+      min: 5
+      max: 25
+      nullable: false
+
+    Gender:
+      dtype: categorical
+      allowed_values: ["Male", "Female", "Other"]
+      nullable: false
+
+    School_Grade:
+      dtype: categorical
+      allowed_values: ["5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"]
+      nullable: false
+
+    Daily_Usage_Hours:
+      dtype: float
+      min: 0
+      max: 24
+
+    Sleep_Hours:
+      dtype: float
+      min: 0
+      max: 24
+
+    Academic_Performance:
+      dtype: integer
+      min: 0
+      max: 100
+
+    Social_Interactions:
+      dtype: integer
+      min: 0
+      max: 10
+
+    Exercise_Hours:
+      dtype: float
+      min: 0
+      max: 24
+
+    Anxiety_Level:
+      dtype: integer
+      min: 0
+      max: 10
+
+    Depression_Level:
+      dtype: integer
+      min: 0
+      max: 10
+
+    Self_Esteem:
+      dtype: integer
+      min: 0
+      max: 10
+
+    Parental_Control:
+      dtype: integer
+      min: 0
+      max: 1
+
+    Screen_Time_Before_Bed:
+      dtype: float
+      min: 0
+      max: 6
+
+    Phone_Checks_Per_Day:
+      dtype: integer
+      min: 0
+
+    Apps_Used_Daily:
+      dtype: integer
+      min: 0
+
+    Time_on_Social_Media:
+      dtype: float
+      min: 0
+      max: 24
+
+    Time_on_Gaming:
+      dtype: float
+      min: 0
+      max: 24
+
+    Time_on_Education:
+      dtype: float
+      min: 0
+      max: 24
+
+    Phone_Usage_Purpose:
+      dtype: categorical
+      allowed_values: ["Education", "Browsing", "Social Media", "Gaming", "Other"]
+
+    Family_Communication:
+      dtype: integer
+      min: 0
+      max: 10
+
+    Weekend_Usage_Hours:
+      dtype: float
+      min: 0
+      max: 48
+
+    Addiction_Level:
+      dtype: float
+      min: 0
+      max: 10
+
+  checks:
+    - no_missing_values: true
+    - no_duplicate_rows: true
