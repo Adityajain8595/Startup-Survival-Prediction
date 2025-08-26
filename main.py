@@ -1,8 +1,9 @@
 from Smartphone_Addiction.components.data_ingestion import DataIngestion
 from Smartphone_Addiction.components.data_validation import DataValidation
+from Smartphone_Addiction.components.data_transformation import DataTransformation
 from Smartphone_Addiction.exception.exception import SmartphoneAddictionException
 from Smartphone_Addiction.logging.logger import logging
-from Smartphone_Addiction.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig
+from Smartphone_Addiction.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig, DataTransformationConfig
 import sys
 
 if __name__=="__main__":
@@ -19,6 +20,12 @@ if __name__=="__main__":
         data_validation_artifact = data_validation.initiate_data_validation()
         logging.info("Data Validation completed")
         print(data_validation_artifact)
+
+        data_transformation_config = DataTransformationConfig(training_pipeline_config)
+        data_transformation = DataTransformation(data_validation_artifact, data_transformation_config)
+        data_transformation_artifact = data_transformation.initiate_data_transformation()
+        logging.info("Data Transformation completed")
+        print(data_transformation_artifact)
 
     except Exception as e:
         raise SmartphoneAddictionException(e, sys)
